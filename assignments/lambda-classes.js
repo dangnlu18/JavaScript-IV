@@ -28,6 +28,10 @@ class Instructor extends People{
 	grade(student, subject) {
 		console.log(`${student.name} receives a perfect score on ${subject}.`)
 	}
+
+  extraCredit(student){
+    return student.grade += 7
+  }
 }
 
 class Student extends People{
@@ -36,6 +40,7 @@ class Student extends People{
 		this.previousBackground = studAttrs.previousBackground;
 		this.className = studAttrs.className;
 		this.favSubjects = studAttrs.favSubjects;
+    this.grade = Math.floor((Math.random() * 100) + 1);
 	}
 
 	listsSubjects(){
