@@ -51,6 +51,23 @@ class Student extends People{
 	}
 }
 
+class ProjectManager extends Instructor{
+	constructor(pmAttrs){
+		super(pmAttrs);
+		this.gradClassName = pmAttrs.gradClassName;
+		this.favInstrucor = pmAttrs.favInstrucor;
+	}
+
+	standup(channel){
+		console.log(`${this.name} announces to ${channel}, @channel standy times!`)
+	}
+
+	debugsCode(student, subject){
+		console.log(`${this.name} debugs ${student.name}'s code on ${subject}`)
+	}
+}
+
+
 // TESTING!!
 
 //Instructors
@@ -90,9 +107,6 @@ const alfred = new Student({
   name: 'Alfred',
   location: 'Bedrock',
   age: 7,
-  favLanguage: 'JavaScript',
-  specialty: 'Front-end',
-  catchPhrase: `lalalalla`,
   previousBackground : 'studying',
   className : 'WEBPT8',
   favSubjects : ['Math', 'Science']
@@ -103,9 +117,6 @@ const kendrick = new Student({
   name: 'Kendrick',
   location: 'SF',
   age: 18,
-  favLanguage: 'Java',
-  specialty: 'back-end',
-  catchPhrase: `Don't forget the beer`,
   previousBackground : 'criminal',
   className : 'WEBPT8',
   favSubjects : ['Art', 'PE']
@@ -115,13 +126,34 @@ const beth = new Student({
   name: 'Beth',
   location: 'Bedrock',
   age: 14,
-  favLanguage: 'Python',
-  specialty: 'Data Science',
-  catchPhrase: `Duuuuuude`,
   previousBackground : 'basketball player',
   className : 'WEBPT8',
   favSubjects : ['PE', 'Science', 'Social Studies']
 });
 
 
+// PM's
 
+const johnny = new ProjectManager({
+  name: 'Johnny',
+  location: 'Bedrock',
+  age: 33,
+  favLanguage: 'Python',
+  specialty: 'Data Science',
+  catchPhrase: `whatsup man`,
+  gradClassName: 'CS1',
+  favInstrucor: 'Kieran'
+
+});
+
+const francois = new ProjectManager({
+  name: 'Francois',
+  location: 'San Jose',
+  age: 23,
+  favLanguage: 'JavaScript',
+  specialty: 'Sleeping',
+  catchPhrase: `whatsup homeboy`,
+  gradClassName: 'CS2',
+  favInstrucor: 'Nobody'
+
+});
